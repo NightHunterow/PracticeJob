@@ -1,0 +1,65 @@
+class Student:
+    def __init__(self, name, age, average_grade):
+        self._name = name
+        self._age = age
+        self._average_grade = average_grade
+
+    # Методы-сеттеры
+    def set_name(self, name):
+        self._name = name
+
+    def set_age(self, age):
+        self._age = age
+
+    def set_average_grade(self, average_grade):
+        self._average_grade = average_grade
+
+    # Методы-геттеры
+    def get_name(self):
+        return self._name
+
+    def get_age(self):
+        return self._age
+
+    def get_average_grade(self):
+        return self._average_grade
+
+    # Метод для вывода информации о студенте
+    def display_info(self):
+        print(f"Имя: {self._name}")
+        print(f"Возраст: {self._age}")
+        print(f"Средний балл: {self._average_grade}")
+
+    # Метод для оценки студента
+    def get_grade(self):
+        if self._average_grade > 8:
+            return "Отлично"
+        elif 6 <= self._average_grade <= 8:
+            return "Хорошо"
+        elif 4 <= self._average_grade < 6:
+            return "Удовлетворительно"
+        else:
+            return "Неудовлетворительно"
+
+# Создание объектов класса Student
+student1 = Student("Иван Иванов", 20, 9)
+student2 = Student("Мария Петрова", 22, 7)
+student3 = Student("Алексей Смирнов", 19, 5)
+
+# Установка новых значений
+student1.set_name("Иван Иванович")
+student1.set_average_grade(8.5)
+
+# Вывод информации о студентах
+student1.display_info()
+print("Оценка:", student1.get_grade())
+
+print()
+
+student2.display_info()
+print("Оценка:", student2.get_grade())
+
+print()
+
+student3.display_info()
+print("Оценка:", student3.get_grade())
